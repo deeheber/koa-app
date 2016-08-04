@@ -1,0 +1,31 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "Setting up a single resource application using MongoDB, Mongoose, and Koa.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deeheber/koa.git"
+  },
+  "author": "Danielle Heberling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deeheber/koa/issues"
+  },
+  "homepage": "https://github.com/deeheber/koa#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.0.1",
+    "nodemon": "^1.10.0"
+  },
+  "dependencies": {
+    "mongoose": "^4.5.8"
+  }
+}

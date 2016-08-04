@@ -1,3 +1,7 @@
+# Custom items
+.env
+.DS_Store
+
 # Logs
 logs
 *.log
