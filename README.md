@@ -24,7 +24,7 @@ dog
 Request bodies for `POST` and `PUT` must be valid JSON.
 Responses are JSON
 
-### Coming sometimes in the future
+### Coming sometime in the future
 - More resource types and relationships between resources
 - Protect routes through user login
 - Admin role API calls
