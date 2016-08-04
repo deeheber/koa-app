@@ -2,7 +2,7 @@ const port = process.env.PORT || 3000;
 require('./lib/setup-mongoose');
 const koa = require('koa');
 const app = module.exports = koa();
-const dogRouter = require('./lib/routes/dogs');
+const router = require('./lib/routes/dogs');
 
 // logger
 // app.use(function *(next){
@@ -18,8 +18,8 @@ const dogRouter = require('./lib/routes/dogs');
 // });
 
 app
-  .use(dogRouter.routes())
-  .use(dogRouter.allowedMethods());
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(port, ()=>{
   console.log(`Server started on port ${port}`);
