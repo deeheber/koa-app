@@ -1,5 +1,6 @@
 const port = process.env.PORT || 3000;
 require('./lib/setup-mongoose');
+const parser = require('koa-bodyparser');
 const koa = require('koa');
 const app = module.exports = koa();
 const router = require('./lib/routes/dogs');
@@ -18,6 +19,7 @@ const router = require('./lib/routes/dogs');
 // });
 
 app
+  .use(parser())
   .use(router.routes())
   .use(router.allowedMethods());
 
