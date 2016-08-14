@@ -23,10 +23,10 @@
   "homepage": "https://github.com/deeheber/koa-app#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
     "eslint": "^3.2.2",
     "mocha": "^3.0.1",
-    "nodemon": "^1.10.0"
+    "nodemon": "^1.10.0",
+    "supertest-koa-agent": "^0.2.1"
   },
   "dependencies": {
     "koa": "^1.2.1",

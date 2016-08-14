@@ -1,9 +1,5 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const assert = require('chai').assert;
-chai.use(chaiHttp);
-
 const connection = require('../lib/setup-mongoose');
+const request = require('supertest-koa-agent');
 const app = require('../lib/app');
 
 describe('api e2e', ()=>{
@@ -14,14 +10,10 @@ describe('api e2e', ()=>{
     else connection.on('open', drop);
   });
 
-  const request = chai.request(app);
-
   it('errors on invalid url path', done=>{
-    request.get('/api/fakeurl')
-    .then(res=>{
-      assert.equal(res.status, 404);
-      done();
-    });
+    request(app)
+    .get('/api/fakeurl')
+    .expect(404, done);
   });
 
   // POST -- creates a dog (or two)
