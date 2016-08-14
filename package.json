@@ -1,13 +1,13 @@
 {
   "name": "koa-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Setting up a single resource application using MongoDB, Mongoose, and Koa.",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "mocha",
     "lint": "eslint **/*.js"
   },
