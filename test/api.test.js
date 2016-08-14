@@ -1,5 +1,6 @@
 const connection = require('../lib/setup-mongoose');
-const request = require('supertest-koa-agent');
+const agent = require('supertest-koa-agent');
+const assert = require('chai').assert;
 const app = require('../lib/app');
 
 describe('api e2e', ()=>{
@@ -10,13 +11,37 @@ describe('api e2e', ()=>{
     else connection.on('open', drop);
   });
 
+  const ernie = {
+    'name': 'ernie',
+    'breed': 'aussie',
+    'age': 12
+  };
+
+  const buster = {
+    'name': 'buster',
+    'breed': 'lab',
+    'age': 5
+  };
+
   it('errors on invalid url path', done=>{
-    request(app)
+    agent(app)
     .get('/api/fakeurl')
     .expect(404, done);
   });
 
-  // POST -- creates a dog (or two)
+  it('creates a dog', done=>{
+    agent(app)
+      .post('/api/dogs')
+      .send(ernie)
+      .expect(200, done);
+  });
+
+  it('creates a second dog', done=>{
+    agent(app)
+      .post('/api/dogs')
+      .send(buster)
+      .expect(200, done);
+  });
 
   // GET -- returns all dogs
 
