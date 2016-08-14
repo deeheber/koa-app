@@ -28,6 +28,7 @@ Responses are JSON
 - More resource types and relationships between resources
 - Protect routes through user login
 - Admin role API calls
+- Front end to make API calls
 
 ### Ways to contribute
 - Report any bugs or feature requests by opening up a new GitHub issue
