@@ -12,6 +12,8 @@
 
   Using the `koa-bodyparser` middleware allowed for me to have more control over what `this` was in my routes. Before I implemented that middleware, I wasn't super sure how to handle or even how to find the request or response objects to do something with it.
 
+  The error handling was also a bit different from Express. I decided the best way to handle this with a simple single resource CRUD app would be to utilize `try` `catch` statements.
+
   During my testing, I initially attempted to use chai-http and just include my exported `app` module like I did with Express. I quickly realized that exporting the `app` that referenced `koa()` was also exporting the entire http server as well and preventing my test from running properly. Including all of that in the `koa()` call can be helpful to spinning up an app quickly, but for testing purposes can complicate things a bit.
 
   To resolve this issue, I discovered the `supertest-koa-agent` module which allowed me to utilize supertest instead of chai-http and transform my Koa app into a supertest compatible agent instance. During this project, I realized that I really enjoyed using supertest over chai-http.

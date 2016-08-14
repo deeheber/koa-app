@@ -87,6 +87,12 @@ describe('api e2e', ()=>{
     .expect(buster, done);
   });
 
+  it('errors on invalid dog id', done=>{
+    agent(app)
+    .get('/api/dogs/123')
+    .expect('Invalid ID', done);
+  });
+
   after(done=>{
     connection.close();
     done();
