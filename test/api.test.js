@@ -72,6 +72,9 @@ describe('api e2e', ()=>{
 
   // DELETE -- removes a dog
 
-  //after(done=> connection.close(done));
+  after(done=>{
+    connection.close();
+    done();
+  });
 
 });
