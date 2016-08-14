@@ -11,13 +11,13 @@ describe('api e2e', ()=>{
     else connection.on('open', drop);
   });
 
-  const ernie = {
+  let ernie = {
     'name': 'ernie',
     'breed': 'aussie',
     'age': 12
   };
 
-  const buster = {
+  let buster = {
     'name': 'buster',
     'breed': 'lab',
     'age': 5
@@ -33,17 +33,37 @@ describe('api e2e', ()=>{
     agent(app)
       .post('/api/dogs')
       .send(ernie)
-      .expect(200, done);
+      .expect(200)
+      .end((err, res)=>{
+        const id = res.body._id;
+        ernie.__v = 0;
+        ernie._id = id;
+        done();
+      });
   });
 
   it('creates a second dog', done=>{
     agent(app)
       .post('/api/dogs')
       .send(buster)
-      .expect(200, done);
+      .expect(200)
+      .end((err, res)=>{
+        const id = res.body._id;
+        buster.__v = 0;
+        buster._id = id;
+        done();
+      });
   });
 
-  // GET -- returns all dogs
+  it('returns all dogs', done=>{
+    agent(app)
+      .get('/api/dogs')
+      .expect((res)=>{
+        assert.equal(res.body.length, 2);
+        assert.deepEqual(res.body, [ernie, buster]);
+      })
+      .end(done);
+  });
 
   // PUT -- updates a dog
 
