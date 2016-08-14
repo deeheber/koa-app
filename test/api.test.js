@@ -65,12 +65,27 @@ describe('api e2e', ()=>{
       .end(done);
   });
 
-  // PUT -- updates a dog
+  it('updates Ernie\'s name', done=>{
+    agent(app)
+    .put(`/api/dogs/${ernie._id}`)
+    .send({name: 'Ernie the dog'})
+    .expect((res)=>{
+      assert.equal(res.body.name, 'Ernie the dog');
+    })
+    .end(done);
+  });
 
-  // GET by ID -- returns a single dog
-  // Error on invalid ID
+  it('gets Buster', done=>{
+    agent(app)
+    .get(`/api/dogs/${buster._id}`)
+    .expect(buster, done);
+  });
 
-  // DELETE -- removes a dog
+  it('removes Buster', done=>{
+    agent(app)
+    .delete(`/api/dogs/${buster._id}`)
+    .expect(buster, done);
+  });
 
   after(done=>{
     connection.close();
