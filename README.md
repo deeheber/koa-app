@@ -1,5 +1,7 @@
-# Koa Single Resource API
-Thought I'd experiment with using a different framework aside from Express. This is a single resource API that uses NodeJS, Koa, MongoDB, and Mongoose.
+# koa-single-resource-app
+Thought I'd experiemnt with using a different framework aside from Express. This is a single resource application the uses Node, Koa, MongoDB, and Mongoose. 
+
+**Note: Items in the app folder are in progress**
 
 ### Directions to use
 1. `npm install` from the command line
@@ -25,10 +27,10 @@ Request bodies for `POST` and `PUT` must be valid JSON.
 Responses are JSON
 
 ### Coming sometime in the future
-- More resource types and relationships between resources
+- Front end to make API calls
 - Protect routes through user login
 - Admin role API calls
-- Front end to make API calls
+- More resource types and relationships between resources
 
 ### Ways to contribute
 - Report any bugs or feature requests by opening up a new GitHub issue
