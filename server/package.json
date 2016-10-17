@@ -24,6 +24,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.2.2",
+    "koa-cors": "0.0.16",
     "mocha": "^3.0.1",
     "nodemon": "^1.10.0",
     "supertest-koa-agent": "^0.2.1"
@@ -32,9 +33,10 @@
     "koa": "^1.2.1",
     "koa-bodyparser": "^2.2.0",
     "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
     "mongoose": "^4.5.8"
   },
-    "engines": {
+  "engines": {
     "node": "6.3.0"
   }
 }
