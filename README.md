@@ -1,7 +1,5 @@
-# koa-single-resource-app
-Thought I'd experiemnt with using a different framework aside from Express. This is a single resource application the uses Node, Koa, MongoDB, and Mongoose. 
-
-**Note: Items in the app folder are in progress**
+# koa-server
+Thought I'd experiemnt with using a different framework aside from Express. This is a single resource API the uses Node, Koa, MongoDB, and Mongoose. 
 
 ### Directions to use
 1. `npm install` from the command line

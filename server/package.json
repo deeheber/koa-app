@@ -1,5 +1,5 @@
 {
-  "name": "koa-app-server",
+  "name": "koa-server",
   "version": "1.2.0",
   "description": "Single resource application using Angular, MongoDB, Mongoose, and Koa.",
   "main": "index.js",
